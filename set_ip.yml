@@ -9,6 +9,7 @@
         type: ethernet
         ip:
           address:
+            - "172.12.150.22/24"
             - "{{ meu_endereco_ip }}/{{ mascara_cidr }}"
           state: up
 
