@@ -1,0 +1,18 @@
+---
+
+- name: Playbook qu seta um IP
+  hosts: postgresql.automation.here
+  vars:
+    network_connections:
+      - name: "{{ nome_perfil }}"
+        interface_name: "{{ nome_interface }}"
+        type: ethernet
+        ip:
+          address:
+            - "{{ meu_endereco_ip }}/{{ mascara_cidr }}"
+          state: up
+
+  tasks:
+    - name: Seta um IP
+      ansible.builtin.include_role:
+        name: rhel-system-roles.network
