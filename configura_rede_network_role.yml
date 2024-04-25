@@ -5,6 +5,8 @@
 
 - name: Playbook qu seta um IP
   hosts: clienterhel9.s2linux.local
+  become: false
+  gather_facts: false
 
   vars:
     network_connections:
