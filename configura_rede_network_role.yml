@@ -20,7 +20,7 @@
         interface_name: "enp7s0"
         autoconnect: false
         type: "ethernet"
-        #state: down
+        state: down
         ip:
           auto_gateway: false
           address:
