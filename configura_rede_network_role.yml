@@ -9,7 +9,7 @@
     network_connections:
       - name: "publica"
         interface_name: "enp7s0"
-        type: ethernet
+        type: "ethernet"
         #state: up
         autoconnect: true
         ip:
