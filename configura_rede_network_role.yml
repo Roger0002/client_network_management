@@ -17,14 +17,15 @@
           address: "172.16.3.10/16"
 
       - name: "privada"
-        #interface_name: "enp7s0"
-        #autoconnect: false
-        state: down
-        #ip:
-        #  auto_gateway: false
-        #  address:
-        #    - "192.168.1.10/24"
-        #    - "192.168.1.20/24"
+        interface_name: "enp7s0"
+        autoconnect: false
+        type: "ethernet"
+        #state: down
+        ip:
+          auto_gateway: false
+          address:
+            - "192.168.1.10/24"
+            - "192.168.1.20/24"
 
       - name: "bond0"
         interface_name: "bond0"
