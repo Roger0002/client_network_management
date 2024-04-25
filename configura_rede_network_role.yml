@@ -18,7 +18,7 @@
 
       - name: "privada"
         #interface_name: "enp7s0"
-        autoconnect: false
+        #autoconnect: false
         state: down
         ip:
           auto_gateway: false
