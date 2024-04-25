@@ -57,7 +57,8 @@
 
   tasks:
     - name: Seta um IP
-      become: true
+      vars:
+        ansible_become: true
       ansible.builtin.include_role:
         name: rhel-system-roles.network
 ...
