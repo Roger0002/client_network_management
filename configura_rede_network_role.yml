@@ -10,7 +10,7 @@
       - name: "publica"
         interface_name: "enp7s0"
         type: "ethernet"
-        #state: up
+        state: up
         autoconnect: true
         ip:
           auto_gateway: false
