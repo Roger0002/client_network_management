@@ -19,6 +19,7 @@
       - name: "privada"
         interface_name: "enp7s0"
         autoconnect: false
+        state: up
         ip:
           auto_gateway: false
           address:
