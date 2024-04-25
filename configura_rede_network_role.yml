@@ -5,6 +5,7 @@
 
 - name: Playbook qu seta um IP
   hosts: clienterhel9.s2linux.local
+
   vars:
     network_connections:
       - name: "publica"
@@ -56,7 +57,7 @@
 
   tasks:
     - name: Seta um IP
+      become: true
       ansible.builtin.include_role:
         name: rhel-system-roles.network
-      become: true
 ...
