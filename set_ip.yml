@@ -4,16 +4,49 @@
   hosts: postgresql.automation.here
   vars:
     network_connections:
-      - name: "{{ nome_perfil }}"
-        interface_name: "{{ nome_interface }}"
-        state: up
+      - name: "publica"
+        interface_name: "enp7s0"
         type: ethernet
+        autoconnect: true
         ip:
+          auto_gateway: false
+          address: "172.16.3.10/16"
+
+      - name: "privada"
+        interface_name: "enp7s0"
+        autoconnect: false
+        ip:
+          auto_gateway: false
           address:
-            - "172.12.150.22/24"
-            - "{{ meu_endereco_ip }}/{{ mascara_cidr }}"
+            - "192.168.1.10/24"
+            - "192.168.1.20/24"
+
+      - name: "bond0"
+        interface_name: "bond0"
+        type: "bond"
+        autoconnect: true
+        bond:
+         mode: "active-backup"
+         miimon: 1000
+        ip:
+          auto_gateway: false
+          address: "192.44.100.100/24"
+
+      - name: "bond-port1"
+        interface_name: "enp9s0"
+        type: "ethernet"
+        autoconnect: true
+        controller: "bond0"
+
+      - name: "bond-port2"
+        interface_name: "enp10s0"
+        type: "ethernet"
+        autoconnect: true
+        controller: "bond0"
 
   tasks:
     - name: Seta um IP
       ansible.builtin.include_role:
         name: rhel-system-roles.network
+
+
