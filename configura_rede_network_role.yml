@@ -14,7 +14,8 @@
         autoconnect: true
         ip:
           auto_gateway: false
-          address: "172.16.3.10/16"
+          address:
+            - "172.16.3.10/16"
 
 #      - name: "privada"
 #        interface_name: "enp7s0"
