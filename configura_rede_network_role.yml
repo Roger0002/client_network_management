@@ -1,0 +1,19 @@
+---
+
+- name: Playbook que configura a rede
+  hosts: clienterhel9.s2linux.local
+  vars:
+    network_connections:
+      - name: "publica"
+        interface_name: "enp7s0"
+        autoconnect: true
+        state: up
+        type: ethernet
+        ip:
+          address:
+            - "172.16.3.10/16"
+
+  tasks:
+    - name: Seta um IP
+      ansible.builtin.include_role:
+        name: rhel-system-roles.network
