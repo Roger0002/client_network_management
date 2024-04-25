@@ -10,6 +10,7 @@
       - name: "publica"
         interface_name: "enp7s0"
         type: ethernet
+        state: up
         autoconnect: true
         ip:
           auto_gateway: false
@@ -18,6 +19,7 @@
       - name: "privada"
         interface_name: "enp7s0"
         autoconnect: false
+        state: "down"
         ip:
           auto_gateway: false
           address:
@@ -27,6 +29,7 @@
       - name: "bond0"
         interface_name: "bond0"
         type: "bond"
+        state: "up"
         autoconnect: true
         bond:
           mode: "active-backup"
@@ -39,12 +42,14 @@
         interface_name: "enp9s0"
         type: "ethernet"
         autoconnect: true
+        state: "up"
         controller: "bond0"
 
       - name: "bond-port2"
         interface_name: "enp10s0"
         type: "ethernet"
         autoconnect: true
+        state: "up"
         controller: "bond0"
 
   tasks:
