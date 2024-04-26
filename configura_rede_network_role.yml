@@ -31,6 +31,19 @@
             - "192.168.1.10/24"
             - "192.168.1.20/24"
 
+      - name: "enp8s0"
+        interface_name: "enp8s0"
+        autoconnect: true
+        type: "ethernet"
+        state: "up"
+        ip: 
+          auto_gateway: false
+          address:
+            - "192.168.2.10/24"
+            - "192.168.2.20/24"
+            - "192.168.2.30/24"
+            - "192.168.2.31/24"
+
       - name: "bond0"
         interface_name: "bond0"
         type: "bond"
