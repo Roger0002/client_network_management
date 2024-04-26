@@ -31,18 +31,6 @@
             - "192.168.1.10/24"
             - "192.168.1.20/24"
 
-      - name: "bond-port1"
-        interface_name: "enp9s0"
-        type: "ethernet"
-        autoconnect: true
-        state: "up"
-
-      - name: "bond-port2"
-        interface_name: "enp10s0"
-        type: "ethernet"
-        autoconnect: true
-        state: "up"
-
       - name: "bond0"
         interface_name: "bond0"
         type: "bond"
@@ -54,6 +42,20 @@
         ip:
           auto_gateway: false
           address: "192.44.100.100/24"
+      
+      - name: "bond-port1"
+        interface_name: "enp9s0"
+        type: "ethernet"
+        autoconnect: true
+        state: "up"
+        controller: "bond0"
+
+      - name: "bond-port2"
+        interface_name: "enp10s0"
+        type: "ethernet"
+        autoconnect: true
+        state: "up"
+        controller: "bond0"
 
   tasks:
     - name: Seta um IP
