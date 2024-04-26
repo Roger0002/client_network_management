@@ -48,14 +48,12 @@
         type: "ethernet"
         autoconnect: true
         state: "up"
-        controller: "bond0"
 
       - name: "bond-port2"
         interface_name: "enp10s0"
         type: "ethernet"
         autoconnect: true
         state: "up"
-        controller: "bond0"
 
   tasks:
     - name: Seta um IP
