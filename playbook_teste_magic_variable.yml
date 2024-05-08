@@ -11,5 +11,5 @@
     - name: Apresentando os servidores
       ansible.builtin.debug:
         msg: "Servidor: {{ item }}"
-      loop: groups.all
+      loop: "{{ groups.all }}"
 ...
