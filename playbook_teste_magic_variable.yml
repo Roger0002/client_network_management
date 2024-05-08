@@ -1,0 +1,10 @@
+---
+
+- name: Playbook de teste de Magic Variables
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Exibe os hosts do inventário
+      ansible.builtin.debug:
+        var: groups
+...
